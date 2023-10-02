@@ -105,26 +105,20 @@
           </div>
         </div>
 
-        <div class="flex justify-center">
+        <div class="flex justify-center mb-5">
           <a
             class="bg-[#295700] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-white rounded-l-lg py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
             >Entry</a
           >
           <a
-            class="bg-[#B8B8B852] w-[180px] cursor-pointer text-center hover:bg-[rgb(212,221,204)] hover:text-white text-[#295700] rounded-r-lg gap-0 py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
-            href="mood.stat.html">Stats</a
+            class="bg-[#B8B8B852] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-[#295700] rounded-r-lg gap-0 py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
+            >Stats</a
           >
         </div>
-
-        <div
-          class="w-0[729px] h-[267px] rounded-[5px] ml-9 bg-[#F5F5F5] shadow-md text-[#295700]"
-        >
-          <h2 class="m-7 p-5">Mood:</h2>
-          <p class="m-5">
-            <i>A safe space for your notes, thoughts and feelings...</i>
-          </p>
+        <!-- -------------------chart section------------------------- -->
+        <div class="w-0[729px] h-[400px] p-3 rounded-[5px] ml-9 mb-5 bg-[#F5F5F5] shadow-md text-[#295700]">
+          <canvas id="myChart"></canvas>
         </div>
-        <h3 class="m-10 text-[#295700] font-bold">Today’s log:</h3>
       </div>
 
       <!-- 30% main div--------- -->
@@ -222,5 +216,7 @@
         </a>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
