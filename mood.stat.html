@@ -18,11 +18,13 @@
       </div>
       <div>
         <ul class="flex space-x-6 pt-4 text-slate-100">
-          <li class="cursor-pointer"><a href="https://thrive-dun.vercel.app/">Home</a> </li>
+          <li class="cursor-pointer">
+            <a href="https://thrive-dun.vercel.app/">Home</a>
+          </li>
           <li class="cursor-pointer">
             <a href="https://about-us-swart.vercel.app/">About</a>
           </li>
-          <li class="cursor-pointer"> 
+          <li class="cursor-pointer">
             <a href="https://my-tiidelab-repo-ge9z-tijesurejoice.vercel.app/"
               >Therapy</a
             >
@@ -50,10 +52,18 @@
       <!-- 70% main div-------- -->
       <div class="w-2/3">
         <div class="flex justify-between m-10">
-          <h3 class="m-5 text-[#295700] font-bold">17th August 2023</h3>
-          <h3 class="m-5 bg-[#2A3D19] p-4 rounded-[5px] text-white font-bold">
+          <h3 class="m-5 text-[#295700] font-bold everyDayDate">
+            17th August 2023
+          </h3>
+          <h3
+            class="m-5 bg-[#2A3D19] p-4 rounded-[5px] text-white font-bold quote"
+          >
             Quote of the day
           </h3>
+          <h1  class="m-5 bg-[#2A3D19] p-4 rounded-[5px] text-white font-bold quote hidden">
+            “Success is not final; Failure is not fatal; It is the courage to
+            continue that counts” <br> -WINSTON CHURCHILL
+          </h1>
         </div>
 
         <!-- emoji div--------------- -->
@@ -65,58 +75,62 @@
               Hey there Sam👋, how are you feeling today?
             </h1>
           </div>
-          <div class="flex gap-10 m-5 px-4">
-            <div class="">
+          <div class="flex gap-10 m-5 px-4 dailyMood onsubmit= addEmoji(event)">
+            <button class="excitedButton" onclick="excitedButton()">
               <p>🤩</p>
               <p>Excited</p>
-            </div>
-            <div>
+            </button>
+            <button class="veryHappyButton" onclick="veryHappyButton()">
               <p>😃</p>
               <p>Very Happy</p>
-            </div>
-            <div>
+            </button>
+            <button class="happyButton" onclick="happyButton()">
               <p>😄</p>
               <p>Happy</p>
-            </div>
-            <div>
+            </button>
+            <button class="chillButton" onclick="chillButton()">
               <p>😎</p>
               <p>Chill</p>
-            </div>
-            <div>
+            </button>
+            <button class="neutralButton" onclick="neutralButton()">
               <p>😐</p>
               <p>Neutral</p>
-            </div>
-            <div>
+            </button>
+            <button class="sadButton" onclick="sadButton()">
               <p>😭</p>
               <p>Sad</p>
-            </div>
-            <div>
+            </button>
+            <button class="anxiousButton" onclick="anxiousButton()">
               <p>😖</p>
               <p>Anxious</p>
-            </div>
-            <div>
+            </button>
+            <button class="angryButton" onclick="angryButton()">
               <p>😡</p>
               <p>Angry</p>
-            </div>
-            <div>
+            </button>
+            <button class="stressedButton" onclick="stressedButton()">
               <p>😩</p>
               <p>Stressed</p>
-            </div>
+            </button>
           </div>
         </div>
 
         <div class="flex justify-center mb-5">
           <a
+            href="index.mood.html"
             class="bg-[#295700] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-white rounded-l-lg py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
             >Entry</a
           >
           <a
+            href="mood.stat.html"
             class="bg-[#B8B8B852] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-[#295700] rounded-r-lg gap-0 py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
             >Stats</a
           >
         </div>
         <!-- -------------------chart section------------------------- -->
-        <div class="w-0[729px] h-[400px] p-3 rounded-[5px] ml-9 mb-5 bg-[#F5F5F5] shadow-md text-[#295700]">
+        <div
+          class="w-0[729px] h-[400px] p-3 rounded-[5px] ml-9 mb-5 bg-[#F5F5F5] shadow-md text-[#295700]"
+        >
           <canvas id="myChart"></canvas>
         </div>
       </div>
@@ -131,17 +145,29 @@
             height="351"
           ></iframe>
         </div>
-        <div class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7">
+        <div
+          class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7"
+        >
           <h1 class="text-[#295700] font-bold text-2xl">Insights</h1>
           <h3 class="text-[#295700] mt-3 font-semibold">
             In the past 7 days...
           </h3>
-          <h3 class="text-[#295700] mt-3">Excited 🤩 - 2 day(s)</h3>
-          <h3 class="text-[#295700]">Anxious 😖 - 1 day(s)</h3>
-          <h3 class="text-[#295700]">Happy 😄 - 2 day(s)</h3>
+          <div class="dailyMoodAppend">
+            <h3 class="text-[#295700] mt-3">
+              Excited 🤩 - <span id="excitedCount"></span>day(s)
+            </h3>
+            <h3 class="text-[#295700]">
+              Anxious 😖 -<span id="anxiousCount"></span> day(s)
+            </h3>
+            <h3 class="text-[#295700]">
+              Happy 😄 - <span id="happyCount"></span> day(s)
+            </h3>
+          </div>
         </div>
 
-        <div class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7">
+        <div
+          class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7"
+        >
           <h1 class="text-[#295700] font-semibold">In the past month...</h1>
           <h1 class="text-[#295700] mt-3">Excited 🤩 - 2 day(s)</h1>
           <h1 class="text-[#295700]">Anxious 😖 - 1 day(s)</h1>
@@ -157,7 +183,9 @@
         <div>
           <span class="text-2xl font-body_text font-medium">Thrive</span>
           <ul>
-            <li class="font-body_text font-medium"><a href="https://about-us-swart.vercel.app/">About</a></li>
+            <li class="font-body_text font-medium">
+              <a href="https://about-us-swart.vercel.app/">About</a>
+            </li>
             <li class="font-body_text font-medium">
               <a href="https://help-and-support.vercel.app/">Contact Us</a>
             </li>

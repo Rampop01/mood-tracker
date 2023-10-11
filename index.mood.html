@@ -18,11 +18,13 @@
       </div>
       <div>
         <ul class="flex space-x-6 pt-4 text-slate-100">
-          <li class="cursor-pointer"><a href="https://thrive-dun.vercel.app/">Home</a> </li>
+          <li class="cursor-pointer">
+            <a href="https://thrive-dun.vercel.app/">Home</a>
+          </li>
           <li class="cursor-pointer">
             <a href="https://about-us-swart.vercel.app/">About</a>
           </li>
-          <li class="cursor-pointer"> 
+          <li class="cursor-pointer">
             <a href="https://my-tiidelab-repo-ge9z-tijesurejoice.vercel.app/"
               >Therapy</a
             >
@@ -50,10 +52,18 @@
       <!-- 70% main div-------- -->
       <div class="w-2/3">
         <div class="flex justify-between m-10">
-          <h3 class="m-5 text-[#295700] font-bold">17th August 2023</h3>
-          <h3 class="m-5 bg-[#2A3D19] p-4 rounded-[5px] text-white font-bold">
+          <h3 class="m-5 text-[#295700] font-bold everyDayDate">
+            17th August 2023
+          </h3>
+          <h3
+            class="m-5 bg-[#2A3D19] p-4 rounded-[5px] text-white font-bold quote"
+          >
             Quote of the day
           </h3>
+          <div class="w-11/12 h-[267px] rounded-[10px] ml-9 mt-7 bg-[#DCAE96] text-center shadow-md  font-bold text-white p-5 hidden ">
+          <img class="ml-[150px] mb-5 " src="/images/Chidimma/🌟.png" alt="">
+          <h3>“Success is not final;Failure is not fatal;It is the courage to continue that counts” <br>  -WINSTON CHURCHILL</h3>
+           </div>
         </div>
 
         <!-- emoji div--------------- -->
@@ -65,66 +75,85 @@
               Hey there Sam👋, how are you feeling today?
             </h1>
           </div>
-          <div class="flex gap-10 m-5 px-4">
-            <div class="">
+          <div class="flex gap-10 m-5 px-4 dailyMood onsubmit= addEmoji(event)">
+            <button class="excitedButton" onclick="excitedButton()">
               <p>🤩</p>
               <p>Excited</p>
-            </div>
-            <div>
+            </button>
+            <button class="veryHappyButton" onclick="veryHappyButton()">
               <p>😃</p>
               <p>Very Happy</p>
-            </div>
-            <div>
+            </button>
+            <button class="happyButton" onclick="happyButton()">
               <p>😄</p>
               <p>Happy</p>
-            </div>
-            <div>
+            </button>
+            <button class="chillButton" onclick="chillButton()">
               <p>😎</p>
               <p>Chill</p>
-            </div>
-            <div>
+            </button>
+            <button class="neutralButton" onclick="neutralButton()">
               <p>😐</p>
               <p>Neutral</p>
-            </div>
-            <div>
+            </button>
+            <button class="sadButton" onclick="sadButton()">
               <p>😭</p>
               <p>Sad</p>
-            </div>
-            <div>
+            </button>
+            <button class="anxiousButton" onclick="anxiousButton()">
               <p>😖</p>
               <p>Anxious</p>
-            </div>
-            <div>
+            </button>
+            <button class="angryButton" onclick="angryButton()">
               <p>😡</p>
               <p>Angry</p>
-            </div>
-            <div>
+            </button>
+            <button class="stressedButton" onclick="stressedButton()">
               <p>😩</p>
               <p>Stressed</p>
-            </div>
+            </button>
           </div>
         </div>
 
         <div class="flex justify-center">
-          <a
+          <a href="index.mood.html"
             class="bg-[#295700] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-white rounded-l-lg py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
             >Entry</a
           >
-          <a
-            class="bg-[#B8B8B852] w-[180px] cursor-pointer text-center hover:bg-[rgb(212,221,204)] hover:text-white text-[#295700] rounded-r-lg gap-0 py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
-            href="mood.stat.html">Stats</a
+          <a href="mood.stat.html"
+            class="bg-[#B8B8B852] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-[#295700] rounded-r-lg gap-0 py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
+            >Stats</a
           >
         </div>
 
-        <div
-          class="w-0[729px] h-[267px] rounded-[5px] ml-9 bg-[#F5F5F5] shadow-md text-[#295700]"
-        >
-          <h2 class="m-7 p-5">Mood:</h2>
-          <p class="m-5">
-            <i>A safe space for your notes, thoughts and feelings...</i>
-          </p>
+        <div>
+          <form name="moodForm" onsubmit="addItem(event) ">
+          <textarea
+            class="w-11/12 h-[267px] rounded-[5px] ml-9 mt-7 bg-[#F5F5F5] shadow-md text-[#295700] text-start p-5 userNote"
+            type="text"
+            name="mood"
+            id="mood"
+            placeholder="Mood:
+            
+            A safe space for your notes, thoughts and feelings..."
+          ></textarea>
+          <div class="flex justify-center m-3">
+            <button
+              type="submit"
+              class="bg-[#295700] inline-flex w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-white rounded-lg py-3 px-8 font-medium shadow-inner shadow-blue-950 inputSubmit"
+            >
+              Submit input
+            </button>
+          </form>
+          </div>
         </div>
-        <h3 class="m-10 text-[#295700] font-bold">Today’s log:</h3>
+        <div>
+        <h3 class="m-10 text-[#295700] font-bold ">
+          Today's log:
+          <br>
+          <p class="todayNoteInput italic"></p>
+        </h3>
+        </div>
       </div>
 
       <!-- 30% main div--------- -->
@@ -133,21 +162,28 @@
           <iframe
             class="p-8 mt-8"
             src="https://calendar.google.com/calendar/embed?height=351&wkst=1&bgcolor=%23ffffff&ctz=Africa%2FLagos&showTabs=1&showNav=1&showTitle=0&showTz=0&showCalendars=1&showPrint=0&showDate=1&src=MzkzMzExY2MwNmJhZTgwMmQzOWQwNDc1YjRjM2E0MzcxM2EzOGEwMTJjZGQxNzk2MDhiMDQ2YjMyMWJkMmIzZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4ubmcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23EF6C00&color=%230B8043"
-            width="500"
+            width="409.5"
             height="351"
           ></iframe>
         </div>
-        <div class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7">
+        <div
+          class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7"
+        >
           <h1 class="text-[#295700] font-bold text-2xl">Insights</h1>
           <h3 class="text-[#295700] mt-3 font-semibold">
             In the past 7 days...
           </h3>
-          <h3 class="text-[#295700] mt-3">Excited 🤩 - 2 day(s)</h3>
-          <h3 class="text-[#295700]">Anxious 😖 - 1 day(s)</h3>
-          <h3 class="text-[#295700]">Happy 😄 - 2 day(s)</h3>
+          <div class="dailyMoodAppend">
+            <h3 class="text-[#295700] mt-3">Excited 🤩 - <span id="excitedCount"></span>day(s)</h3>
+            <h3 class="text-[#295700]">Anxious 😖 -<span id="anxiousCount"></span> day(s)</h3>
+            <h3 class="text-[#295700]">Happy 😄 - <span id="happyCount"></span> day(s)</h3>
+            <h3 class="text-[#295700]">Chill 😄 - <span id="chillCount"></span> day(s)</h3>
+          </div>
         </div>
 
-        <div class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7">
+        <div
+          class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7"
+        >
           <h1 class="text-[#295700] font-semibold">In the past month...</h1>
           <h1 class="text-[#295700] mt-3">Excited 🤩 - 2 day(s)</h1>
           <h1 class="text-[#295700]">Anxious 😖 - 1 day(s)</h1>
@@ -156,14 +192,17 @@
       </div>
     </div>
 
-    <footer
+
+    <footer v
       class="w-full bg-[#2A3D19] text-slate-100 px-20 py-5 flex flex-col items-center"
     >
       <div class="w-full flex items-center justify-evenly mb-2">
         <div>
           <span class="text-2xl font-body_text font-medium">Thrive</span>
           <ul>
-            <li class="font-body_text font-medium"><a href="https://about-us-swart.vercel.app/">About</a></li>
+            <li class="font-body_text font-medium">
+              <a href="https://about-us-swart.vercel.app/">About</a>
+            </li>
             <li class="font-body_text font-medium">
               <a href="https://help-and-support.vercel.app/">Contact Us</a>
             </li>
@@ -221,6 +260,7 @@
           <img src="images/Vector.png" alt="scroll up" />
         </a>
       </div>
+      <script src="script.js"></script>
     </footer>
   </body>
 </html>
