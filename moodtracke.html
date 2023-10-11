@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[rgb(212,221,204)]">
+    <!-- header session-------------- -->
+    <header id="header" class="bg-[#2A3D19] flex justify-between px-8">
+      <div id="thriveLogo" class="inline-block w-14 h-14">
+        <img
+          src="images/Thrive logo.png"
+          alt="Thrive logo"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div>
+        <ul class="flex space-x-6 pt-4 text-slate-100">
+          <li class="cursor-pointer">
+            <a href="https://thrive-dun.vercel.app/">Home</a>
+          </li>
+          <li class="cursor-pointer">
+            <a href="https://about-us-swart.vercel.app/">About</a>
+          </li>
+          <li class="cursor-pointer">
+            <a href="https://my-tiidelab-repo-ge9z-tijesurejoice.vercel.app/"
+              >Therapy</a
+            >
+          </li>
+          <li class="cursor-pointer">
+            <a href="https://short-thrive-101.netlify.app/">Community</a>
+          </li>
+          <li class="cursor-pointer">
+            <a href="https://sign-up-thrive.vercel.app/">Sign up</a>
+          </li>
+          <li class="cursor-pointer">
+            <span class="searchIcon"
+              ><i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #ffffff"
+              ></i
+            ></span>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- body div holdind the both div-------- -->
+    <div class="flex">
+      <!-- 70% main div-------- -->
+      <div class="w-2/3">
+        <div class="flex justify-between m-10">
+          <h3 class="m-5 text-[#295700] font-bold everyDayDate">
+            17th August 2023
+          </h3>
+          <h3
+            class="m-5 bg-[#2A3D19] p-4 rounded-[5px] text-white font-bold quote"
+          >
+            Quote of the day
+          </h3>
+        </div>
+
+        <!-- emoji div--------------- -->
+        <div
+          class="bg-[#F5F5F5] rounded-[5px] m-10 text-center shadow-md w-[816px] h-[197px]"
+        >
+          <div class="pt-10">
+            <h1 class="text-[#295700] font-semibold px-4">
+              Hey there Sam👋, how are you feeling today?
+            </h1>
+          </div>
+          <div class="flex gap-10 m-5 px-4 dailyMood onsubmit= addEmoji(event)">
+            <button class="excitedButton" onclick="excitedButton()">
+              <p>🤩</p>
+              <p>Excited</p>
+            </button>
+            <button class="veryHappyButton" onclick="veryHappyButton()">
+              <p>😃</p>
+              <p>Very Happy</p>
+            </button>
+            <button class="happyButton" onclick="happyButton()">
+              <p>😄</p>
+              <p>Happy</p>
+            </button>
+            <button class="chillButton" onclick="chillButton()">
+              <p>😎</p>
+              <p>Chill</p>
+            </button>
+            <button class="neutralButton" onclick="neutralButton()">
+              <p>😐</p>
+              <p>Neutral</p>
+            </button>
+            <button class="sadButton" onclick="sadButton()">
+              <p>😭</p>
+              <p>Sad</p>
+            </button>
+            <button class="anxiousButton" onclick="anxiousButton()">
+              <p>😖</p>
+              <p>Anxious</p>
+            </button>
+            <button class="angryButton" onclick="angryButton()">
+              <p>😡</p>
+              <p>Angry</p>
+            </button>
+            <button class="stressedButton" onclick="stressedButton()">
+              <p>😩</p>
+              <p>Stressed</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <a href="moodtracke.html"
+            class="bg-[#295700] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-white rounded-l-lg py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
+            >Entry</a
+          >
+          <a href="moodtrackstat.html"
+            class="bg-[#B8B8B852] w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-[#295700] rounded-r-lg gap-0 py-3 px-8 font-medium inline-block shadow-inner shadow-blue-950"
+            >Stats</a
+          >
+        </div>
+
+        <div>
+          <form name="moodForm" onsubmit="addItem(event) ">
+          <textarea
+            class="w-11/12 h-[267px] rounded-[5px] ml-9 mt-7 bg-[#F5F5F5] shadow-md text-[#295700] text-start p-5 userNote"
+            type="text"
+            name="mood"
+            id="mood"
+            placeholder="Mood:
+            
+            A safe space for your notes, thoughts and feelings..."
+          ></textarea>
+          <div class="flex justify-center m-3">
+            <button
+              type="submit"
+              class="bg-[#295700] inline-flex w-[180px] text-center hover:bg-[rgb(212,221,204)] hover:text-white text-white rounded-lg py-3 px-8 font-medium shadow-inner shadow-blue-950 inputSubmit"
+            >
+              Submit input
+            </button>
+          </form>
+          </div>
+        </div>
+        <div>
+        <h3 class="m-10 text-[#295700] font-bold ">
+          Today's log:
+          <br>
+          <p class="todayNoteInput italic"></p>
+        </h3>
+        </div>
+      </div>
+
+      <!-- 30% main div--------- -->
+      <div class="w-1/3">
+        <div>
+          <iframe
+            class="p-8 mt-8"
+            src="https://calendar.google.com/calendar/embed?height=351&wkst=1&bgcolor=%23ffffff&ctz=Africa%2FLagos&showTabs=1&showNav=1&showTitle=0&showTz=0&showCalendars=1&showPrint=0&showDate=1&src=MzkzMzExY2MwNmJhZTgwMmQzOWQwNDc1YjRjM2E0MzcxM2EzOGEwMTJjZGQxNzk2MDhiMDQ2YjMyMWJkMmIzZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4ubmcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23EF6C00&color=%230B8043"
+            width="409.5"
+            height="351"
+          ></iframe>
+        </div>
+        <div
+          class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7"
+        >
+          <h1 class="text-[#295700] font-bold text-2xl">Insights</h1>
+          <h3 class="text-[#295700] mt-3 font-semibold">
+            In the past 7 days...
+          </h3>
+          <div class="dailyMoodAppend">
+            <h3 class="text-[#295700] mt-3">Excited 🤩 - <span id="excitedCount"></span>day(s)</h3>
+            <h3 class="text-[#295700]">Anxious 😖 -<span id="anxiousCount"></span> day(s)</h3>
+            <h3 class="text-[#295700]">Happy 😄 - <span id="happyCount"></span> day(s)</h3>
+            <h3 class="text-[#295700]">Chill 😄 - <span id="chillCount"></span> day(s)</h3>
+          </div>
+        </div>
+
+        <div
+          class="rounded-[5px] m-10 shadow-md w-[Fixed (390px)] h-[197px] p-7"
+        >
+          <h1 class="text-[#295700] font-semibold">In the past month...</h1>
+          <h1 class="text-[#295700] mt-3">Excited 🤩 - 2 day(s)</h1>
+          <h1 class="text-[#295700]">Anxious 😖 - 1 day(s)</h1>
+          <h1 class="text-[#295700]">Happy 😄 - 2 day(s)</h1>
+        </div>
+      </div>
+    </div>
+
+
+    <footer v
+      class="w-full bg-[#2A3D19] text-slate-100 px-20 py-5 flex flex-col items-center"
+    >
+      <div class="w-full flex items-center justify-evenly mb-2">
+        <div>
+          <span class="text-2xl font-body_text font-medium">Thrive</span>
+          <ul>
+            <li class="font-body_text font-medium">
+              <a href="https://about-us-swart.vercel.app/">About</a>
+            </li>
+            <li class="font-body_text font-medium">
+              <a href="https://help-and-support.vercel.app/">Contact Us</a>
+            </li>
+            <li class="font-body_text font-medium">
+              <a href="https://help-and-support.vercel.app/">Help & Support</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <span class="text-xl font-body_text font-medium">Social</span>
+          <ul>
+            <li class="font-body_text font-medium">Facebook</li>
+            <li class="font-body_text font-medium">Instagram</li>
+            <li class="font-body_text font-medium">Twitter</li>
+          </ul>
+        </div>
+        <div>
+          <span class="text-2xl font-body_text font-medium">Services</span>
+          <ul>
+            <li class="font-body_text font-medium">
+              <a href="#">Resources</a>
+            </li>
+            <li class="font-body_text font-medium">
+              <a href="https://thrive-relaxation-pages-frames-1-23.vercel.app/"
+                >Relaxation</a
+              >
+            </li>
+            <li class="font-body_text font-medium">
+              <a href="https://my-tiidelab-repo-ge9z-tijesurejoice.vercel.app/"
+                >Therapy</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div
+          class="flex items-center justify-center font-body_text font-medium"
+        >
+          <input
+            class="p-1 rounded-l-sm"
+            type="text"
+            placeholder="Email Address"
+          />
+          <button
+            class="rounded-r-sm bg-button px-2 py-1.5 outline-none font-body_text font-semibold"
+          >
+            Subscribe
+          </button>
+        </div>
+      </div>
+      <div class="w-full flex relative items-end justify-center">
+        <span class="text-center text-sm font-body_text font-medium"
+          >copyright&copy; 2023 thrive.techtribe all right reserved.</span
+        >
+        <a class="absolute right-0 cursor-pointer" href="#hero">
+          <img src="images/Vector.png" alt="scroll up" />
+        </a>
+      </div>
+      <script src="moodTrack.js"></script>
+    </footer>
+  </body>
+</html>
