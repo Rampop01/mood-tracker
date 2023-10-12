@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .slide-in {
+          animation-name: slide-in;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+        }
+
+        @keyframes slide-in {
+          from {
+            transform: translateY(-100%);
+          }
+
+          to {
+            transform: translateY(0%);
+          }
+        }
+
+        .slide-out {
+          animation-name: slide-out;
+          animation-duration: 1s;
+          animation-fill-mode: backwards;
+        }
+
+        @keyframes slide-out {
+          from {
+            transform: translateY(0%);
+          }
+
+          to {
+            transform: translateY(-100%);
+          }
+        }
+      }
+    </style>
   </head>
   <body class="bg-[rgb(212,221,204)]">
     <!-- header session-------------- -->
@@ -246,5 +281,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./script.js"></script>
+    <script src="headerFooter.js"></script>
   </body>
 </html>

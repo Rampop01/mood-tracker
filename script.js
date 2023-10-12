@@ -1,44 +1,44 @@
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['mon', 'tue', 'wed', 'thurs', 'fri', 'sat', 'sun'],
-        datasets: [{
-            label: 'Recent Week Overview',
-            data: [6, 8, 10, 10, 4, 9, 9],
-            backgroundColor: '#DCAE96',
-            // fill: true,
-            borderColor: ['black'],
-            borderWidth: 1,
-            pointBackgroundColor: 'white',
-        }]
-    },
-    options: {
-        aspectRatio: 2.5,
-        scales: {
-            x: {
-                beginAtZero: true,
-                grid: {
-                    borderColor: 'black'
-                }
-            },
-            y: {
-                // beginAtZero: true,
-                ticks: {
-                    callback: function (value, index, values) {
-                        const emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '🙂'];
-                        return emojis[index];
-                    }
-                },
-                grid: {
-                    borderColor: 'black'
-                }
-            }
-        }
-    }
-});
-
-
+// const ctx = document.getElementById("myChart").getContext("2d");
+// const myChart = new Chart(ctx, {
+//   type: "line",
+//   data: {
+//     labels: ["mon", "tue", "wed", "thurs", "fri", "sat", "sun"],
+//     datasets: [
+//       {
+//         label: "Recent Week Overview",
+//         data: [6, 8, 10, 10, 4, 9, 9],
+//         backgroundColor: "#DCAE96",
+//         // fill: true,
+//         borderColor: ["black"],
+//         borderWidth: 1,
+//         pointBackgroundColor: "white",
+//       },
+//     ],
+//   },
+//   options: {
+//     aspectRatio: 2.5,
+//     scales: {
+//       x: {
+//         beginAtZero: true,
+//         grid: {
+//           borderColor: "black",
+//         },
+//       },
+//       y: {
+//         // beginAtZero: true,
+//         ticks: {
+//           callback: function (value, index, values) {
+//             const emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "🙂"];
+//             return emojis[index];
+//           },
+//         },
+//         grid: {
+//           borderColor: "black",
+//         },
+//       },
+//     },
+//   },
+// });
 
 // mooodtrack and mood note js---------------
 const dailyDate = document.querySelector(".everyDayDate");
@@ -47,6 +47,8 @@ const noteInput = document.querySelector(".todayNoteInput");
 const inputSubmit = document.querySelector(".inputSubmit");
 const dailyMood = document.querySelector(".dailyMood");
 const dailyMoodAppend = document.querySelector(".dailyMoodAppend");
+const quote = document.querySelector(".quote");
+const popQuote = document.querySelector(".popQuote");
 
 // daily date--------------
 const now = new Date();
@@ -57,23 +59,37 @@ const year = now.getFullYear();
 dailyDate.innerHTML = `${day}th ${month} ${year}`;
 
 // quote of the day---------------
-const quoteOpen = function () {
-  // overlay.classList.remove("hidden");
-  modal.classList.remove("hidden");
-};
-
-const quoteClose = function () {
-  overlay.classList.add("hidden");
-  modal.classList.add("hidden");
-};
-btnCloseModal.addEventListener("click", closeModal);
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
+quote.addEventListener("click", function () {
+  popQuote.classList.remove("hidden");
+  document.querySelector("body").style.overflow = "hidden";
 });
 
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    popQuote.classList.add("hidden");
+    document.querySelector("body").style.overflow = "auto";
+  }
+
+})
+
+// const quoteOpen = function () {
+//   // overlay.classList.remove("hidden");
+//   modal.classList.remove("hidden");
+// };
+
+// quoteOpen()
+
+// const quoteClose = function () {
+//   overlay.classList.add("hidden");
+//   modal.classList.add("hidden");
+// };
+// btnCloseModal.addEventListener("click", closeModal);
+
+// document.addEventListener("keydown", function (e) {
+//   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+//     closeModal();
+//   }
+// });
 
 // emoji javascript---------------
 
